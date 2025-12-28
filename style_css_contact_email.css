@@ -1,0 +1,175 @@
+/* ===================== CONTACT FORM ===================== */
+/* 🔥 Quitar fondo blanco del autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #112d4e inset !important;
+  -webkit-text-fill-color: aliceblue !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ===================== SEND IT STYLE ===================== */
+/* OVERLAY */
+.send-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+}
+
+.send-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CAJA */
+.send-box {
+  background: rgba(10, 20, 40, 0.9);
+  border: 2px solid rgb(0, 136, 248);
+  border-radius: 18px;
+  width: 500px;
+  padding: 40px 60px;
+  text-align: center;
+
+  color: white;
+  box-shadow: 0 0 40px rgba(0,136,248,0.4);
+
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+
+  animation: popIn 0.6s ease forwards;
+}
+#blockTimer {
+  color: rgb(180,210,255);
+  font-size: 18px;
+  font-weight: 500;
+}
+/* TEXTO */
+.send-box h2 {
+  font-size: 32px;
+  color: rgb(0, 136, 248);
+  margin-bottom: 10px;
+}
+
+.send-box p {
+  opacity: 0.8;
+}
+/* ===================== CONTACT FORM ===================== */
+
+
+.contact-form {
+  width: auto;
+
+  padding: 28px;
+  border-radius: 18px;
+
+  background: rgba(0, 128, 255, 0.095);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 0 30px rgba(0, 136, 248, 0.074),
+    inset 0 0 1px rgba(255,255,255,0.25);
+}
+
+/* ===================== INPUTS ===================== */
+
+.contact-form input,
+.contact-form input:focus,
+.contact-form textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+  margin: 12px 0;
+
+  font-family: 'Garet-Book';
+  font-size: 16px;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+/* Placeholder */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(200, 220, 255, 0.6);
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgb(0,136,248);
+  box-shadow: 0 0 12px rgba(0,136,248,0.5);
+}
+
+/* ===================== BUTTON ===================== */
+
+.contact-form .btn {
+  width: 100%;
+  margin-top: 18px;
+  margin: auto;
+
+  padding: 16px;
+  border-radius: 999px;
+
+  background: linear-gradient(120deg, rgb(0,136,248), rgb(0,80,200));
+  border: none;
+
+  color: white;
+  font-family: 'Garet-Book';
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,136,248,0.6);
+}
+.contact-form .btn:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+/* ===================== ANIMATIONS ===================== */
+/* ANIMACIÓN */
+@keyframes popIn {
+  0% {
+    transform: scale(0.7) translateY(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

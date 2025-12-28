@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>D N 8 8 | Projects and Demos</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style_css_portfolio.css">
+</head>
+
+
+<body class="body_page">
+
+    <!-- NAVEGADOR -->
+    <nav class="side-dock">
+        <a href="html_code_portfolio.html" class="dock-item" title="Portfolio">
+           <img src="images/icon_start.png" alt="Projects" class="dock-icon">
+        </a>
+        <a href="html_code_projects.html" class="dock-item active" title="Projects">
+            <img src="images/icon_projects.png" alt="Projects" class="dock-icon">
+        </a>
+        <div class="dock-separator"></div>
+        <a href="html_code_portfolio_contact.html" class="dock-item" title="Contact">
+            <img src="images/icon_contact.png" alt="Projects" class="dock-icon">
+        </a>
+    </nav>
+
+
+
+    <section class="projects-hero">
+
+        <img src="images/logo.png" alt="DN88 Logo" class="hero-logo">
+
+        <h1 class="hero-title">P R O J E C T S</h1>
+
+        <p class="hero-subtitle">
+            Here are some of my projects and demos that showcase my skills
+            as a game developer specialized in Godot.
+        </p>
+
+        <img src="images/img_gif_mouse_scroll.gif" alt="DN88 Logo" class="img_mouse_scroll_filter">
+
+    </section>
+
+
+
+    <!-- MP3 PLAYER -->
+    <section class="project">
+
+        <h2 class="project-title">
+            Its MUSIC Time! (Godot 4 Finished)
+        </h2>
+
+        <video
+            id="mainVideo"
+            class="project-video"
+            controls
+            preload="metadata"
+            poster="images/icon_video_1.png"
+
+        >
+            <source src="videos/its_vid0.mp4" type="video/mp4">
+        </video>
+
+
+
+        <p class="project-desc">
+          This project is a music player with a UNDERTALE/DELTARUNE style UI made in Godot 4.
+          It has a custom user interface where you can play, pause, skip, and adjust the volume of your music files.
+          You can also see the current track's title and duration. These are the features of this project:
+        </p>
+
+        <ul class="project-features">
+            <li>Play music with this format: MP3, WAV, OGG</li>
+            <li>Pause, resume playback, mute, etc with your keyboard or going to the buttons.</li>
+            <li>Personalize your background and envroment</li>
+        </ul>
+
+        <p class="project-desc">
+            (Note: This project is finished and available to download for Windows and Linux. At the moment im working on a new update.)
+        </p>
+
+        <button class="btn_download_game" onclick="window.location.href='https://gamejolt.com/games/its-music-time/1017869'"><img src="images/deltarune-tv-time-xrgqfmja.png" style="width: 30%; border-radius: 15px; margin-left: -70%; margin-top: 4%;">
+            <h2 class="project-title-download">
+                Its MUSIC Time!
+            </h2>
+            <h2 class="project-title-download-info">
+                Gamejolt Download
+            </h2>
+            <img src="images/images.png" class="img_gamejolt_icon">
+        </button>
+
+    </section>
+
+
+
+    <!-- RPG PROJECT -->
+    <section class="project">
+
+        <h2 class="project-title">
+            Narrative RPG UI & Dialogue Systems (Godot 4 Demo)
+        </h2>
+
+        <p class="project-desc">
+            Note: The first videos provide a good preview of the project's features.
+        </p>
+
+        <video
+            id="mainVideo"
+            class="project-video"
+            controls
+            preload="metadata"
+            poster="images/icon_video_2.png"
+
+        >
+            <source src="videos/vid1.mp4" type="video/mp4">
+        </video>
+
+        <!-- LISTA DESLIZABLE -->
+        <div class="video-list">
+
+            <video
+                class="video-thumb"
+                src="videos/vid0.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/vid0.mp4"
+            ></video>
+
+            <video
+                class="video-thumb active"
+                src="videos/vid1.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/vid1.mp4"
+            ></video>
+
+            <video
+                class="video-thumb"
+                src="videos/vid2.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/vid2.mp4"
+            ></video>
+
+        </div>
+
+
+        <p class="project-desc">
+        A playable demo built in Godot 4 showcasing custom RPG UI and dialogue systems.
+         There are a few videos of the project features below, it shows the progress of this. This project focuses on system design and UI functionality.
+        </p>
+
+        <ul class="project-features">
+            <li>Modular dialogue system</li>
+            <li>Character stats UI</li>
+            <li>Settings menu</li>
+            <li>Data persistence using node groups</li>
+            <li>Simple localization system</li>
+        </ul>
+
+    </section>
+
+
+
+    <!-- RPG ACTION PROJECT -->
+    <section class="project">
+
+        <h2 class="project-title">
+            RPG Action UI & Simple Inventory System (Godot 3 Demo)
+        </h2>
+
+
+        <video
+            id="mainVideo"
+            class="project-video"
+            controls
+            preload="metadata"
+            poster="images/icon_video_3.png"
+        >
+            <source src="videos/etdt_vid0.mp4" type="video/mp4">
+        </video>
+
+        <!-- LISTA DESLIZABLE -->
+        <div class="video-list">
+
+            <video
+                class="video-thumb"
+                src="videos/etdt_vid0.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/etdt_vid0.mp4"
+            ></video>
+
+        </div>
+
+        <p class="project-desc">
+            A playable demo built in Godot 3 showcasing a simple inventory system and RPG action UI.
+            This project focuses on system design and UI functionality.
+        </p>
+
+        <ul class="project-features">
+            <li>Inventory UI & System</li>
+            <li>UI confortable</li>
+        </ul>
+
+    </section>
+
+
+    <!-- BATTLE SYSTEM PROJECT -->
+    <section class="project">
+
+        <h2 class="project-title">
+            Battle System Prototype (Godot 4 Demo)
+        </h2>
+
+
+        <video
+            id="mainVideo"
+            class="project-video"
+            controls
+            preload="metadata"
+            poster="images/icon_video_0.png"
+        >
+            <source src="videos/cw_vid0.mp4" type="video/mp4">
+        </video>
+
+        <!-- LISTA DESLIZABLE -->
+        <div class="video-list">
+
+            <video
+                class="video-thumb"
+                src="videos/cw_vid0.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/cw_vid0.mp4"
+            ></video>
+             <video
+                class="video-thumb"
+                src="videos/cw_vid1.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/cw_vid1.mp4"
+            ></video>
+             <video
+                class="video-thumb"
+                src="videos/cw_vid2.mp4"
+                muted
+                preload="metadata"
+                data-video="videos/cw_vid2.mp4"
+            ></video>
+
+        </div>
+
+        <p class="project-desc">
+            A fast-paced 2D fighting game prototype inspired by classic fighters, developed in Godot.
+            The project focuses on core combat mechanics such as input handling, state-based character logic, hit detection, and animation timing,
+            prioritizing responsiveness and gameplay feel over visual polish.
+
+            It has a user interface for character selection for 2 players, plus a mini user interface for selecting a color for your character.
+        </p>
+
+        <ul class="project-features">
+            <li>State-based combat system</li>
+            <li>Responsive input handling</li>
+             <li>Basic hit / hurt box logic</li>
+             <li>Character animations synced to combat states </li>
+            <li>Prototype-focused gameplay experimentation </li>
+        </ul>
+
+    </section>
+
+
+
+    <script src="js_code_functions.js"></script>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-close">&times;</span>
+
+            <video
+            id="modalVideo"
+            controls
+            preload="metadata"
+            ></video>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

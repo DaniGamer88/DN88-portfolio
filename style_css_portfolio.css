@@ -1,0 +1,535 @@
+/* ====================================================================
+   1. FUENTES
+==================================================================== */
+@font-face {
+  font-family: "Garet-Book";
+  src: url("fonts/Garet-Book.ttf") format("truetype");
+}
+
+/* ====================================================================
+   2. RESET BÁSICO Y BODY GLOBAL
+==================================================================== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Garet-Book';
+}
+
+/* Página general (projects) */
+.body_page {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: linear-gradient(120deg, #1e1d20, #002756);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: block;
+  overflow-x: hidden; /* evita scroll horizontal fantasma */
+  overflow-y:visible; /
+}
+
+/* Página landing y contacto */
+.body_page_start {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: linear-gradient(120deg, #1e1d20, #002756);
+  display: flex;
+  color: #0080ff;
+  font-weight: 100px;
+  flex-direction: column;
+  overflow-x: hidden; /* evita scroll horizontal fantasma */
+  overflow-y: hidden;
+}
+
+/* Espacio para que el dock no tape contenido */
+body {
+  padding-top: 70px;
+}
+
+/* ====================================================================
+   3. SIDE DOCK / NAV BAR INFERIOR
+==================================================================== */
+
+.side-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 16px;
+
+  padding: 14px 20px;
+  border-radius: 40px;
+
+  background: rgba(10, 15, 30, 0.75);
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 0 40px rgba(0, 97, 176, 0.25),
+    inset 0 0 1px rgba(255,255,255,0.2);
+
+  z-index: 1000;
+}
+
+/* Ítems del dock */
+.dock-item {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+/* Iconos PNG */
+.dock-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+
+  /* azul base */
+  filter: invert(1) sepia(1) saturate(6) hue-rotate(190deg);
+}
+
+.dock-item:hover .dock-icon {
+  filter: invert(1) sepia(1) saturate(8) hue-rotate(190deg);
+}
+
+.dock-item.active {
+  background: rgb(0,136,248);
+}
+
+.dock-item.active .dock-icon {
+  filter: invert(1) sepia(1) saturate(10) hue-rotate(195deg);
+}
+
+/* Separador visual */
+.dock-separator {
+  width: 1px;
+  margin: 6px auto;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ====================================================================
+   4. HERO DE PROJECTS
+==================================================================== */
+.img_mouse_scroll_filter {
+  width: 40px;
+  position: absolute;
+  bottom: 200px;       /* separación del borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+
+  filter: drop-shadow(0 0 10px rgba(0,136,248,0.5));
+}
+
+.projects-hero {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 40px 20px;
+
+  background: radial-gradient(circle at center, rgba(0,136,248,0.18), transparent 60%);
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards 0.2s;
+  overflow-y: hidden; /* evita scroll horizontal fantasma */
+}
+
+.hero-logo {
+  width: 110px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 15px rgba(0,136,248,0.5));
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 700;
+  color: rgb(0, 136, 248);
+  letter-spacing: 6px;
+}
+
+.hero-subtitle {
+  max-width: 720px;
+  margin-top: 20px;
+  font-size: clamp(1rem, 2.3vw, 1.3rem);
+  color: rgb(160, 200, 255);
+  line-height: 1.6;
+}
+
+/* ====================================================================
+   5. PROJECT PANELS
+==================================================================== */
+
+.project {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  padding: 30px;
+
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+}
+
+.project-title-download {
+  font-size: 25px;
+  text-align: left;
+  color: rgb(233, 233, 233);
+  margin-left: 30%;
+  margin-top: -12%;
+  margin-bottom: 5%;
+  padding: 25px;
+  font-family: 'Garet-Book';
+}
+.project-title-download-info {
+  font-size: 15px;
+  text-align: left;
+  color: rgb(143, 143, 143);
+  margin-left: 30%;
+  margin-top: -12%;
+  margin-bottom: 5%;
+  padding: 25px;
+  font-family: 'Garet-Book';
+}
+
+.project:first-of-type {
+  margin-top: 80px;
+}
+
+.project-title {
+  font-size: 30px;
+  color: rgb(0,136,248);
+  margin-bottom: 20px;
+}
+
+.project-desc {
+  font-size: 20px;
+  color: rgb(180,210,255);
+  margin-bottom: 16px;
+}
+
+.project-features {
+  padding-left: 20px;
+  font-size: 20px;
+  color: rgb(200,220,255);
+}
+
+.project-features li {
+  margin-bottom: 6px;
+}
+
+/* Video principal */
+.project-video {
+  width: 100%;
+  max-height: 480px;
+  border-radius: 14px;
+  background: #000;
+  margin-bottom: 24px;
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* ====================================================================
+   6. LISTA DE VIDEOS (THUMBNAILS)
+==================================================================== */
+
+.video-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 14px 4px;
+  margin-top: 20px;
+}
+
+.video-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.video-list::-webkit-scrollbar-thumb {
+  background: rgba(0,136,248,0.6);
+  border-radius: 10px;
+}
+
+.video-thumb {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+
+  border-radius: 10px;
+  cursor: pointer;
+  background: #000;
+
+  opacity: 0.6;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.video-thumb:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.video-thumb.active {
+  opacity: 1;
+  outline: 2px solid rgb(0,136,248);
+}
+
+/* ====================================================================
+   7. VIDEO MODAL (VENTANA FRONTAL)
+==================================================================== */
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.34s ease-out forwards;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.video-modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+}
+
+#modalVideo {
+  width: 100%;
+  border-radius: 14px;
+  background: #000;
+}
+
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ====================================================================
+   8. LANDING / CONTACT CONTAINERS
+==================================================================== */
+.about_text {
+  font-size: 13px;
+  color: rgb(32, 121, 255);
+  line-height: 1.6;
+  text-align: center;
+  padding: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  transform: translateY(-50px);
+}
+
+.div_header_page,
+.div_header_page_large {
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.div_header_page {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards 0.2s;
+}
+
+.div_header_page_large {
+  max-width: 1300px;
+}
+
+.img_header {
+  width: 300px;
+  margin-bottom: -20px;
+}
+
+/* ====================================================================
+   9. BOTONES
+==================================================================== */
+.btn_download_game {
+  padding: 2rem 3.8rem;
+  margin: 1.5rem;
+  border-radius: 24px;
+  border: none;
+
+  background: linear-gradient(10deg, #0000005d, #2900407b);
+  backdrop-filter: blur(14px);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn_download_game:hover {
+  animation: UpGlowBttnDwGame 0.3s ease-out forwards 0.01s;
+  transform: scale(1.10);
+}
+.img_gamejolt_icon {
+  width: 40px;
+  position: absolute;
+  bottom: 20px;       /* separación del borde inferior */
+  left: 95%;
+  transform: translateX(-50%);
+
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+
+.btn {
+  padding: 2rem 3.8rem;
+  margin: 1.5rem;
+  border-radius: 999px;
+  border: none;
+
+  background-color: rgb(0,79,248);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn:hover {
+  animation: UpGlowBttn 0.3s ease-out forwards 0.01s;
+  transform: scale(1.10);
+}
+
+.btn-full {
+  width: 900px;
+  height: 100px;
+  margin-right: 1000px;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+
+  font-family: Garet-Book;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.btn-full:hover {
+  transform: scale(1.01);
+  animation: UpGlowBttn 0.3s ease-out forwards 0.01s;
+}
+.btn-full::before {
+  content: "";
+  position: absolute;
+  scale: 1.10;
+  inset: 0;
+  background: linear-gradient(15deg, #0044ff, #0062ff);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  z-index: -1;
+}
+.btn-full:hover::before {
+  transform: scale(1.11);
+  opacity: 1;
+}
+
+/* ====================================================================
+   10. TOAST
+==================================================================== */
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: rgba(0,136,248,0.9);
+  color: white;
+
+  padding: 14px 22px;
+  border-radius: 10px;
+
+  font-size: 16px;
+  opacity: 0;
+
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  z-index: 9999;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====================================================================
+   11. ANIMACIONES
+==================================================================== */
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes UpGlowBttn {
+  to {
+    box-shadow:
+      0 0 40px rgb(0, 136, 248),
+      inset 0 0 1px rgba(0, 217, 255, 0.123);
+  }
+}
+
+@keyframes UpGlowBttnDwGame {
+  to {
+    box-shadow:
+      0 0 40px rgb(123, 0, 255),
+      inset 0 0 1px rgba(254, 255, 255, 0.585);
+  }
+}
