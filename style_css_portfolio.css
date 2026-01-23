@@ -235,6 +235,18 @@ body {
   margin-bottom: 6px;
 }
 
+/* Para el texto de al final donde indica el copyrighj */
+.project-coming-soon {
+  font-size: 10px;
+  text-align: center;
+  align-self: bottom;
+  color: rgb(0, 109, 172);
+  margin-top: -5%;
+  margin-bottom: 5%;
+  padding: 25px;
+  font-family: 'Garet-Book';
+}
+
 /* Video principal */
 .project-video {
   width: 100%;
